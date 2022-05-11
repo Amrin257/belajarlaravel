@@ -2,9 +2,11 @@
 
 @section('container')
 
-    {{-- <h2> {{ $post["title"] }}</h2> --}}
-    <h5>{{ $post["author"] }}</h5>
-    <p>{{ $post["body"] }}</p>
+    {{--   --}}
+    <h5>{{ $post->title }}</h5> 
+
+    {{-- fungsi dibawah menghilang tag html fi text --}}
+    {!! $post->body !!}
 
     <a href="/blog">Back To Post</a>
 @endsection
