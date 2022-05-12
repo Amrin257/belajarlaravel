@@ -42,4 +42,5 @@ Route::get('/Halamanku', function () {
 Route::get('/blog', [PostController::class, 'index']);
 
 //Halaman Singel post
-Route::get('posts/{slug}', [PostController::class, 'show']);
+// {post:slug} -> mencari id berdasarkan Slug
+Route::get('posts/{post:slug}', [PostController::class, 'show']);
