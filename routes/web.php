@@ -1,10 +1,12 @@
 <?php
 
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
-
+  
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,4 +45,30 @@ Route::get('/blog', [PostController::class, 'index']);
 
 //Halaman Singel post
 // {post:slug} -> mencari id berdasarkan Slug
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
+
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+
+Route::get('/categoriess', function(){
+    return view('categories', [
+        'title' => 'Post Categories',
+        'categories' => Category::all()
+
+    ]);
+});
+
+Route::get('/categories/{category:slug}' , function (Category $category) {
+    return view('posts', [
+        'title'     => "Post By Category : $category->name",
+        // koneksi ke model Category
+        'posts'     => $category->posts->load('category','author'),
+    ]);
+});
+
+Route::get('/authors/{author:username}', function(User $author){
+    return view('posts', [
+        'title'  => "Post By Author : $author->name",
+        // koneksi ke model Category
+        // ->load('author','category') == menringankan beban databse 
+        'posts'   => $author->posts->load('author','category'),
+    ]);
+});

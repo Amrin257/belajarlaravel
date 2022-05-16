@@ -26,7 +26,8 @@ Category::create([
 
 Post::create([
     'title' => 'Judul Ke Tiga',
+    'category_id' => '3',
     'slug' => 'judul-ke-tiga',
     'excerpt' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia reiciendis ipsam non nobis',
-    'body' => '<p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia reiciendis ipsam non nobis eligendi qui quas illo nesciunt inventore, neque tempora, consequuntur, earum ab labore. Tempore laudantium deleniti neque quaerat rerum quae? Quam nemo esse expedita, quia id illo incidunt animi recusandae error officia adipisci impedit eum quos suscipit ipsum, omnis tempora.</p> <p>  Voluptatem, consequuntur facere. Beatae labore similique natus aliquam dolorum odio voluptate inventore, voluptates fuga minus? Magni ratione pariatur ut facere quam. Molestiae dolor voluptates ratione, minus obcaecati praesentium nostrum libero autem. Sunt quos ullam optio vel magnam, autem aliquid assumenda soluta minus doloremque quaerat eos alias ipsam. Eum.</p>'
+    'body' => '<p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia reiciendis ipsam non nobis eligendi qui quas illo nesciunt inventore, neque tempora, consequuntur, earum ab labore. Tempore laudantium deleniti neque quaerat rerum quae? Quam nemo esse expedita, quia id illo incidunt animi recusandae error officia adipisci impedit eum quos suscipit ipsum, omnis tempora.</p> <p>  Voluptatem, consequuntur facere. Beatae labore similique natus aliquam dolorum odio voluptate inventore, voluptates fuga minus? Magni ratione pariatur ut facere quam. Molestiae dolor voluptates ratione, minus obcaecati praesentium nostrum libero autem. Sunt quos ullam optio vel magnam, autem aliquid assumenda soluta minus doloremque quaerat eos alias ipsam. Eum.</p>' 
 ])
