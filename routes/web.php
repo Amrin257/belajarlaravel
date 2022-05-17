@@ -48,9 +48,10 @@ Route::get('/blog', [PostController::class, 'index']);
 
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
-Route::get('/categoriess', function(){
+Route::get('/categories', function(){
     return view('categories', [
         'title' => 'Post Categories',
+        'active' => 'categories',
         'categories' => Category::all()
 
     ]);
@@ -58,8 +59,10 @@ Route::get('/categoriess', function(){
 
 Route::get('/categories/{category:slug}' , function (Category $category) {
     return view('posts', [
-        'title'     => "Post By Category : $category->name",
+        'title'     => "Post By Category : $category->name", 
+        'active' => 'categories',
         // koneksi ke model Category
+        // ->load('author','category') == menringankan beban databse 
         'posts'     => $category->posts->load('category','author'),
     ]);
 });
